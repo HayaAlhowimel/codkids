@@ -1,0 +1,243 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Code Kids - Parent dashboard</title>  
+<link rel="stylesheet" href="parentdashboard.css"> 
+<link rel="icon" type="image/png" href="codekidsLogo.png">
+
+<link rel="stylesheet" href="styles.css">
+<style>
+  body.theme1 {
+          background-color: #f2f2f2;
+          color: #000000;
+      }
+      body.theme2 {
+          background-color: #333333;
+          color: #ffffff;
+      }
+      .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+    }
+    footer {
+    background-color: #dddddd;
+    color: #000000;
+    text-align: center;
+    padding: 2vh;
+   position: relative;
+   width: auto;
+   clear: both;
+ }
+ aside {
+    background-color: #f0f0f0;
+    float: right;
+    width:25%;
+    padding: 5px;
+}
+
+aside ul {
+    list-style: none;
+    padding: 0;
+}
+
+aside li {
+    padding: 5px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+aside a {
+    text-align: center;
+    color: #333;
+    display: block;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* Align children to the left */
+    margin: 0; /* Remove default margin */
+}
+
+.column {
+    flex: 0 0 calc(25% - 20px); /* Adjust the width of each child card */
+    max-width: calc(25% - 20px); /* Ensure max width for each child card */
+    margin: 10px; /* Add some margin between child cards */
+}
+
+  </style>
+  
+  <script>
+      function toggleMenu() {
+          var menu = document.querySelector('nav ul');
+          menu.classList.toggle('show');
+      }
+      function applySavedTheme() {
+          const savedTheme = localStorage.getItem('selectedTheme');
+          if (savedTheme) {
+              document.body.classList.add(savedTheme);
+          }
+      }
+      window.addEventListener('DOMContentLoaded', function () {
+          applySavedTheme();
+          displayChildren();
+      });
+
+      function displayChildren() {
+            let childrenNames = JSON.parse(localStorage.getItem('childNames')) || [];
+            if (childrenNames.length === 0) {
+                childrenNames = ['Eman', 'Sara'];
+                localStorage.setItem('childrenNames', JSON.stringify(childrenNames));
+            }
+
+            const container = document.querySelector('.row');
+            container.innerHTML = '';
+            var count=0;
+            childrenNames.forEach((childName, index) => {
+                const div = document.createElement('div');
+                div.classList.add('column');
+                if(count>4){
+                  count=0;
+                }
+                const imagePath = `img/child${count + 1}.JPG`;
+                div.innerHTML = `
+                    <div class="child">
+                        <img class="profpic" src="${imagePath}" alt="${childName}" style="width:100%">
+                        <h2>${childName}</h2>
+                        <div class="container">
+                          <p><button class="button" onclick="viewProfile('${childName}', ${count})">View Profile</button></p>
+             </div>
+                    </div>
+                `;
+                container.appendChild(div);
+                count++;
+            });
+          
+        }
+
+        function viewProfile(childName, count) {
+      const container = document.querySelector('.row');
+      const childDiv = container.querySelector(`[alt="${childName}"]`).closest('.column');
+
+      if (childDiv) {
+        // Display image and name in a modal
+        const imagePath = `img/child${count + 1}.JPG`;
+        const imageElement = `<img src="${imagePath}" alt="${childName}" style="width:100%">`;
+        const nameElement = `<h2>${childName}</h2>`;
+        const modalContent = `${imageElement}${nameElement}`;
+        
+        // Create modal
+        const modal = document.createElement('div');
+        modal.classList.add('modal');
+        modal.innerHTML = `
+          <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            ${modalContent}
+          </div>
+        `;
+        document.body.appendChild(modal);
+        modal.style.display = 'flex';
+      } else {
+        alert('Child information not found.');
+      }
+    }
+
+  
+    function closeModal() {
+    const modal = document.querySelector('.modal');
+    if (modal) {
+      modal.style.display = 'none';
+      modal.remove();
+    }
+  }
+
+  </script>
+
+</head>
+
+<body>
+<header>
+ 
+    <div class="logo">
+        <img src="image/download.png" alt="Platform Logo">
+        <h2>Code kids</h2>
+    </div>
+    <div>
+      <nav>
+          <ul>
+              <li><a href="home.html" accesskey="H">Home</a></li>
+              <li><a href="courses.html" accesskey="C">Courses</a></li>
+              <li><a href="tutors.html" accesskey="T">Tutors</a></li>
+              <li><a href="Admin.html" accesskey="A">Admin Dashboard</a></li>
+              <li><a href="parent%20dashboard.html" accesskey="P">Parent's Dashboard</a></li>
+          </ul>
+      </nav>
+  </div>
+
+</header>
+
+
+<ul class="breadcrumb">
+  <li><a href="home.html">Home</a></li>
+  <li><a href="parent dashboard.html">Parent dashboard
+  </a></li>
+</ul>
+<main>
+    <aside>
+        <ul>
+            <li><a href="register a new kid.html">Register New Kid</a></li>
+            <li><a href="course_enrollment.html">Course Enrollment</a></li>
+            <li><a href="course_evalution.html">Course Evaluation</a></li>
+        </ul>
+    </aside>
+<br>
+<h1>Kids List</h1>
+<div class="row">
+
+  
+ 
+
+ </div>
+
+  <div class="f">
+  <div class="nextpre">
+        <a href="#" class="wbutton" id="prevPage">&laquo; Previous</a>
+        <a href="#" class="wbutton" id="page1">1</a>
+        <a href="#" class="wbutton" id="page2">2</a>
+        <a href="#" class="wbutton" id="page3">3</a>
+        <a href="#" class="wbutton" id="page4">4</a>
+        <a href="#" class="wbutton" id="nextPage">Next &raquo;</a>
+    </div>
+</div>
+</main>
+<br><br><br>
+
+<footer>
+  <p>Contact: codeKida@acadmay.com | Phone: 966-508-666-4332</p>
+  <p style="font-style: italic;">&copy; 2023 codeKids. All rights reserved.</p>
+</div>
+</footer>
+</body>
+</html>
+

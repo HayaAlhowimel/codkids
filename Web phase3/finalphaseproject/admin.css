@@ -1,0 +1,316 @@
+
+  *{
+    
+box-sizing: border-box;
+   }
+
+ 
+
+
+   
+ #more {display: none;}
+
+
+
+ 
+ .name p{
+    list-style-type: circle;
+  }
+.box {
+     border-bottom: 24px solid #394c8b;
+    border-bottom-left-radius: 10px;
+border-bottom-right-radius: 10px;
+ 
+ }
+ 
+ .box h2{
+color: #fff;
+background: #394c8b;
+ padding: 1px 0px;
+ text-align: center;
+font-weight: bold;
+border-top-left-radius: 10px;
+border-top-right-radius: 10px;
+ }
+ul.box{
+    position: relative;
+     background: #ffffff;
+     width: 100%; /* Set the width to 100% for the unordered lists */
+    padding: 0; /* Remove any default padding */
+}
+      
+ 
+  
+ 
+ .box ul li{
+    list-style-type: none;
+    padding: 10px;
+    box-shadow: 0 5px 25px rgba(21, 36, 11, 0.1);
+    transition: transform 0.5s;
+    position: relative; /* Add this line */
+    height: 50px;/**this*/
+ 
+    
+  }
+.box ul li:hover {
+    transform: scale(1.1);
+    z-index: 90;
+    background: rgba(210, 210, 210, 0.83);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    color: #000000;
+    opacity: 0.9;}
+
+.box ul li span{
+    width: 20px;
+    height: 10px;
+    text-align: center;
+     color: #fff;
+    border-radius: 50px;
+    margin-right: 50px;
+     font-weight: 600;
+    transform: translateY(-2px);
+  }
+
+/*Kids style*/
+ 
+ /*Tutor style*/
+ .Tutor {
+    border-bottom: 24px solid #394c8b;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+     
+        direction: rtl;
+     }
+     
+.Tutor h2 {
+    color: #fff;
+    background: #394c8b;
+    padding: 1px 1px;
+     text-align: center;
+    font-weight: bold;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+ }
+ul.Tutor {
+    position: relative;
+    background: #fff;
+    width: 100%; /* Set the width to 100% for the unordered lists */
+    padding: 0; /* Remove any default padding */
+    flex-grow: 1;
+ 
+  }
+ 
+
+.Tutor ul li {
+    list-style-type: none;
+    padding: 10px;
+    box-shadow: 0 5px 25px rgba(21, 36, 11, 0.1);
+    transition: transform 0.5s;
+    position: relative; /* Add this line */
+    width: 100%; /* Set the width of list items to 100% */
+    
+   }
+
+.Tutor ul li:hover {
+    transform: scale(1.1);
+    z-index: 90;
+    background: rgba(210, 210, 210, 0.83);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    color: #000000;
+    opacity: 0.9;
+
+
+}
+ 
+ 
+
+#moreK{
+    display: none;
+}
+
+#BtnK{
+    display: none;
+}
+ul{
+    text-align: left;
+    list-style-type: circle ;
+}
+details { 
+    
+    direction: rtl; /* يجعل المحتوى من اليمين إلى اليسار */ 
+    
+    } 
+    
+    
+    details summary { 
+    
+    list-style: none; /* لإخفاء المؤشر الافتراضي */ 
+    
+    display: flex; 
+    
+    justify-content: space-between; 
+    
+    align-items: center; /* لتوسيط المؤشر عمودياً */ 
+    
+    padding-right: 5px; 
+
+     } 
+    
+    
+    details summary::before { 
+    
+    content: '▼'; /* مؤشر نزولي */ 
+    
+    font-size: 16px; /* حجم المؤشر */ 
+    
+    margin-right: 10px; /* تحديد هامش يميني للمؤشر */ 
+    color: black ;    
+    } 
+    
+    
+    details[open] summary::before { 
+    
+    content: '▲'; /* مؤشر صعودي عندما يكون القائمة منسدلة */ 
+    
+    } 
+    a{
+        color:rgb(0, 0, 0);
+
+    }
+
+/*course style*/
+ .Admcourse{
+    border-bottom: 24px solid #394c8b;
+   border-bottom-left-radius: 10px;
+border-bottom-right-radius: 10px;
+float: left;
+ direction: rtl ;
+ 
+}
+.Admcourse h2{
+color: #fff;
+background: #394c8b;
+padding: 0px 10px;
+ text-align: center;
+font-weight: bold;
+border-top-left-radius: 10px;
+border-top-right-radius: 10px;
+}
+ul.Admcourse{
+   position:fixed;
+    background: #fff;
+    width: 100%; /* Set the width to 100% for the unordered lists */
+    padding: 0; /* Remove any default padding */
+}
+    
+
+ul.Admcourse:hover {
+   opacity: 0.1;
+
+
+
+}
+.Admcourse ul li:hover{
+
+   transform: scale(1.1);
+    z-index: 90;
+    background: rgba(210, 210, 210, 0.83);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    color: #000000;
+    opacity: 0.9;}
+
+   .Admcourse ul li{
+       list-style-type: none;
+       padding: 10px;
+       box-shadow: 0 5px 25px rgba(21, 36, 11, 0.1);
+       transition: transform 0.5s;
+       padding: 10px;
+       width: 100%; /* Set the width of list items to 100% */
+       box-sizing: border-box; /* Include padding and border in the element's total width and height */
+ 
+   }
+    
+
+
+
+ 
+.box, .Tutor, .Admcourse {
+    float: left;
+    width: 30%; /* تحديد عرض متساوٍ للأقسام */
+     margin: 0 20px; /* تحديد هامش بين الأقسام */
+    text-align: center; /* لتوسيط محتوى الأقسام */
+    box-sizing:border-box;
+     padding: 20px;
+     margin: 10;
+   
+ }
+
+
+
+
+
+
+
+
+
+
+#myBtn {
+    float: right; /* Aligns the button to the right */
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: small;
+    background-color: rgb(214, 212, 212);
+}
+
+#Button {
+    background-color: rgb(210, 210, 210);
+     border: none; /* Remove the border */
+    /* Additional styles (if needed) */
+}
+
+.box li img {
+    width:30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 20px;
+
+}
+.Admcourse li img{
+width:30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 20px;}
+.Tutor li img{
+    width:30px;
+    height: 30px;
+    border-radius: 50%;
+     direction: rtl;
+     margin-right: 20px;
+
+}
+/*h*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

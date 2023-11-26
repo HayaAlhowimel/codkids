@@ -1,0 +1,534 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="codekidsLogo.png">
+
+     <link rel="stylesheet" href="admin.css">
+     <link rel="stylesheet" href="styles.css">
+<title>Code kids-Adminstrutor page</title>
+  <style>
+    body.theme1 {
+        background-color: #f2f2f2;
+        color: #000000;
+    }
+    body.theme2 {
+        background-color: #333333;
+        color: #ffffff;
+    }
+    footer {
+    background-color: #dddddd;
+    color: #000000;
+    text-align: center;
+    padding: 2vh;
+   position: relative;
+   width: auto;
+   clear: both;
+
+  }
+  
+
+.Tutor ul li img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 20px;
+ }
+
+ 
+
+ 
+
+ 
+   
+/* قوانين CSS للعناصر المشتركة بين القوائم */
+.box ul,
+.Tutor ul,
+.Admcourse ul {
+     padding: 0;
+ }
+
+  
+ 
+ 
+
+
+   
+ 
+
+ 
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.0"></script>
+
+    <script>
+         function toggleMenu() {
+        var menu = document.querySelector('nav ul');
+        menu.classList.toggle('show');
+    }
+    function applySavedTheme() {
+        const savedTheme = localStorage.getItem('selectedTheme');
+        if (savedTheme) {
+            document.body.classList.add(savedTheme);
+        }
+    }
+    window.addEventListener('DOMContentLoaded', function () {
+        applySavedTheme();
+        displayCurrentWeekDate();
+    });
+
+    function displayCurrentWeekDate() {
+    // Get the current date
+    var currentDate = new Date();
+
+    // Define options for date formatting
+    var options = { weekday: 'long', month: 'long', day: 'numeric' };
+
+    // Calculate the start of the current week
+    var startOfWeek = new Date(currentDate);
+    startOfWeek.setDate(currentDate.getDate() - currentDate.getDay());
+
+    // Format the start date as a string
+    var formattedStartDate = startOfWeek.toLocaleDateString('en-US', options);
+
+    // Get the element for displaying the date
+    var dateDisplay = document.getElementById('currentWeekDate');
+
+    // Create a stylish and creative message
+    var message = `🌟 Welcome to a new week! br ${formattedStartDate}📅`;
+
+    // Set the content of the element with the stylish message
+    dateDisplay.textContent = message;
+}
+
+
+
+
+
+    
+        function myFunction() {
+  var dots = document.getElementById("dots");
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("myBtn");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "View more"; 
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "View less"; 
+    moreText.style.display = "inline";
+  }
+}
+
+function CourseM(courseId) {
+    var more = document.getElementById("moreK" + courseId);
+    var btnK = document.getElementById("BtnK" + courseId);
+
+    if (more.style.display === "none") {
+      more.style.display = "block";
+      btnK.innerHTML = "Less Kids";
+    } else {
+      more.style.display = "none";
+      btnK.innerHTML = "less Kids";
+    }
+  }
+  function Courses(courseId) {
+        var mores = document.getElementById("mores" + courseId);
+        var btns = document.getElementById("Btns" + courseId);
+    
+        if (mores.style.display === "none") {
+          mores.style.display = "block";
+          btns.innerHTML = "Less Kids";
+        } else {
+          mores.style.display = "none";
+          btns.innerHTML = "More Kids";
+        }
+    }
+      
+ 
+
+
+
+
+
+
+</script>
+</head>
+<body>
+    <header>
+        
+  
+            <div class="logo">
+                <img src="image/download.png" alt="Platform Logo">
+                <h2>Code kids</h2>
+            </div>
+          
+            <div>
+              <nav>
+                  <ul>
+                      <li><a href="home.html" accesskey="H">Home</a></li>
+                      <li><a href="courses.html" accesskey="C">Courses</a></li>
+                      <li><a href="tutors.html" accesskey="T">Tutors</a></li>
+                      <li><a href="Admin.html" accesskey="A">Admin Dashboard</a></li>
+                      <li><a href="parent%20dashboard.html" accesskey="P">Parent's Dashboard</a></li>
+                  </ul>
+              </nav>
+          </div>
+            
+        
+        
+    </header>
+    <ul class="breadcrumb">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="Admin.html">Admin Dashboard
+        </a></li>
+    </ul>
+        
+    <br>
+<main>  
+    <p id="currentWeekDate"></p>
+
+     
+     <!--kids -->
+     <div class="box">   
+        <h2>list of kids</h2>
+   <ul>
+    
+    <li><img src="image/girl%20icon.jpg" alt="icon" ><span> </span>Reema Fahad</li>
+<li><img src="image/girl%20icon.jpg" alt="icon"><span> </span>Noor Khalid</li>
+    <li><img src="image/boy.jpg" alt=""><span> </span>Ahmed Mohammed</li>
+    <li><img src="image/boy.jpg" alt=""><span> </span>Yousef Ali</li>
+    <li><img src="image/boy.jpg" alt=""><span></span>Abdullah Ibrahim </li>
+    <li><img src="image/boy.jpg" alt=""><span></span>Sultan Mohammed </li>  
+    <li><img src="image/girl%20icon.jpg" alt="icon"><span> </span>Maryam Yousef</li> 
+    <li> <img src="image/boy.jpg" alt=""><span></span>Omar Saad </li>
+    <li><img src="image/boy.jpg" alt=""><span></span>Waledd AbdulRahman </li>
+    <span id="dots"></span><span id="more">
+    
+   
+     <li><img src="image/boy.jpg" alt=""><span></span>Bader Nasser</li>
+<li><img src="image/girl icon.jpg" alt="icon"><span> </span>Layan Mohammed</li>
+
+<li><img src="image/girl icon.jpg" alt="icon"><span> </span>Zainab Ali</li>
+
+<li><img src="image/girl icon.jpg" alt="icon"><span> </span>Lama Ahmed</li>
+ 
+<li>
+     <img src="image/boy.jpg" alt=""><span></span> Salman Khalid</li>
+      
+<li>
+     <img src="image/boy.jpg" alt=""><span></span>Fares Mohammed</li>
+<li>
+     <img src="image/boy.jpg" alt=""><span></span> Mahmoud Hassan   </li>
+<li>
+     <img src="image/boy.jpg" alt=""><span></span>Saif Ibrahim </li>
+<li>
+     <img src="image/boy.jpg" alt=""><span></span>AbdulRahman Majed</li>
+<li>
+   <img src="image/girl icon.jpg" alt="icon"> <span> </span>Lamia Abdullah</li>
+<li>
+    <img src="image/girl icon.jpg" alt="icon"><span> </span>Nouf Mohammed</li>
+<li>
+    <img src="image/girl icon.jpg" alt="icon"><span> </span>Lujain Faisal</li>
+<li>
+    <img src="image/girl icon.jpg" alt="icon"><span> </span>Nourah Abdulaziz</li>
+<li>
+    <img src="image/girl icon.jpg" alt="icon"><span> </span>Rahma Waleed</li>
+<li>
+    <img src="image/girl icon.jpg" alt="icon"><span> </span>Danah majed</li>
+<li>
+    <img src="image/girl icon.jpg" alt="icon"><span> </span>Maha Yousef</li>
+ </span>
+    <br><button onclick="myFunction()" id="myBtn">View More </button>
+
+ 
+ </ul>
+</div>
+
+  <!--kids -->
+
+  <!--tutor -->
+  
+<div class="Tutor" > 
+        
+        <h2>list of Tutor</h2>
+  <ul>
+<li>  
+    <img src="image/TLogo.jpg" alt="Teacher">
+ 
+    <details>
+        <summary > 
+          <a href="Schedule.html" class="Schedule">T.Sarah</a>
+
+        </summary>
+        
+        <h4>Course name</h4>
+        <p>PHP  </p>
+        <p>JavaScript</p>
+
+    </details>
+</li>
+  
+  <li> 
+    <img src="image/TLogo.jpg" alt="Teacher">
+ 
+  
+    <details>
+        <summary> 
+          <a href="Schedule.html" class="Schedule">T.Nuha</a>
+
+        </summary>
+        
+<h4>Course name</h4>
+<p>Python</p>
+     </details>
+</li>
+<li>  
+    <img src="image/TLogo.jpg" alt="Teacher" >
+     <details>
+        <summary> 
+          <a href="Schedule.html" class="Schedule">T.Arwa</a>
+
+
+        </summary>
+        
+    
+                    <h4>Course name</h4>
+        <p>++C</p>
+    </details>
+</li>
+  <li>
+    <img src="image/TutorLogo.jpg" alt="tutorLogo">
+ 
+ <details>
+    <summary> 
+      <a href="Schedule2.html" class="Schedule">T.Faisal</a>
+
+    </summary>
+    
+<h4>Course name</h4>
+<p>Scratch </p>
+<p>++C</p>
+</details>
+</li>
+  <li>
+    <img src="image/TutorLogo.jpg" alt="tutorLogo">
+ 
+<details>
+    <summary> 
+      <a href="Schedule2.html" class="Schedule">T.Bader</a>
+
+    </summary>
+    
+<h4>Course name</h4>
+<p>Java</p>
+</details>
+</li>
+ 
+ <li>
+        <img src="image/TutorLogo.jpg" alt="tutorLogo"  >
+ 
+    <details>
+
+    <summary> 
+      <a href="Schedule2.html" class="Schedule">T.Saleh</a>
+
+    </summary>
+    
+        <h4>Course name</h4>
+        <p>JavaScript</p>
+</details>
+</li>
+ 
+ 
+ </ul>
+</div>
+ 
+  <!--tutor -->
+
+
+<!--course-->
+
+
+<div class="Admcourse">
+  <h2>list of course</h2>
+
+  <ul>
+    <li>
+      <img src="image/logoP.jpg" alt="PythonLogo">
+      <details>
+        <summary>Python</summary>
+
+        <h4>Kids name</h4>
+        <p>Lama Ahmed</p>
+        <p>Noor Khalid</p>
+        <p>Reema Fahad</p>
+        <p>Maryam Yousef</p>
+        <p>Lamia Abdullah</p>
+        <span id="moreKPython" style="display: none;">
+
+          <p>Rahma Waleed</p>
+          <p>Nouf Mohammed</p>
+          <p>Janaan Hassan</p>
+        </span>
+        <button onclick="CourseM('Python')" id="BtnKPython">More Kids</button>
+        <h4>Tutor name</h4>
+        <p>T.Nuha</p>
+      </details>
+    </li>
+
+    <li>
+      <img src="image/java.png" alt="JavaLogo">
+      <details>
+        <summary>Java</summary>
+        <h4>Kids name</h4>
+        <p>Lama Ahmed</p>
+        <p>Noor Khalid</p>
+        <p>Reema Fahad</p>
+        <p>Saif Ibrahim</p>
+        <span id="moreKJava"style="display: none;">
+          <p>Maryam Yousef</p>
+          <p>Lamia Abdullah</p>
+          <p>Fares Mohammed</p>
+          <p>Janaan Hassan</p>
+        </span>
+        <button onclick="CourseM('Java')" id="BtnKJava">More Kids</button>
+        <h4>Tutor name</h4>
+        <p>T.Bader</p>
+      </details>
+    </li>
+
+    <li>
+      <img src="image/scratch.png" alt="SkratchLogo">
+      <details>
+        <summary>Skratch</summary>
+        <h4>Kids name</h4>
+        <p>Lujain Mustafa</p>
+        <p>Nourah Abdulaziz</p>
+        <p>Rahma Waleed</p>
+        <p>Maha Yousef</p>
+        <p>Saif Ibrahim</p>
+        <span id="moresSkratch"style="display: none;">
+          <p>Lamia Abdullah</p>
+          <p>Waleed AbdulRahman</p>
+          <p>Janaan Hassan</p>
+        </span>
+        <button onclick="Courses('Skratch')" id="BtnsSkratch">More Kids</button>
+
+        <h4>Tutor name</h4>
+        <p>T.Faisal</p>
+      </details>
+    </li>
+
+
+
+     
+                  
+                          <!-- تكرر للكورسات الأخرى بنفس الطريقة -->
+                      
+
+
+
+
+
+
+
+
+
+      <li>  
+          <img src="image/php.jpg" alt="PHP logo">
+          <details>
+              <summary>PHP</summary>
+              <h4>Kids name</h4>
+ <p>Nourah Abdulaziz</p> 
+<p>Rahma Waleed</p>
+<p> Yousef Ali</p>
+     <p> Mahmoud Hassan</p>
+    <p>Bader Nasser</p>
+<span id="moresPHP"style="display: none;">
+
+
+<p>Danah majed</p>
+<p>Maha Yousef</p>
+<p>Saif Ibrahim</p>
+<p>Waledd AbdulRahman</p>
+      <p>Omar Saad</p>
+</span>
+<button onclick="Courses('PHP')" id="BtnsPHP">More Kids</button>
+<h4>Tutor name</h4>
+<p>T.Sarah</p>
+          </details>
+          </li>
+          <li>
+              <img src="image/logo js.jpg" alt="JavaScriptLogo">  
+              <details>
+                  <summary>Java script</summary>
+                  <h4>Kids name</h4>
+                  <p>Salman Khalid</p>
+                  <p>Fares Mohammed</p>
+      <p>Bader Nasser</p>
+      <p>Layan Mohammed</p>
+      <p> Zainab Ali </p>
+      <p> Ahmed Mohammed</p>
+      <span id="mores++C"style="display: none;"><!--
+
+kids when clik more
+       
+      <p>Sultan Mohammed</p>
+<p>AbdulRahman Majed</p>
+<p>Maha Yousef</p>
+<p>Reema Fahad</p>-->
+
+      </span>
+<button onclick="Courses('PHP')" id="BtnsPHP">More Kids</button>
+
+<h4 >Tutor name</h4>
+<p>T.Mohammed</p>
+<p>T.Sarah</p>
+              </details>
+              </li>
+              <li>  
+                  <img src="image/logoC.jpg" alt="LogoC">
+                  <details>
+                      <summary>++C</summary>
+                      <h4>kids name</h4>
+      <p>Layan Mohammed</p>
+      <p> Zainab Ali </p>
+      <p> Ahmed Mohammed</p>
+      <p> Yousef Ali</p>
+      <p> Abdullah Ibrahim</p>
+      <span id="mores++C"style="display: none;"><!--
+          <p> Yousef Ali</p>
+              <p> Omar Saad</p>
+                  <p> Mahmoud Hassan</p>
+                  <p>Bader Nasser</p>-->
+                  </span>
+                <button onclick="Courses('PHP')" id="BtnsPHP">More Kids</button>
+                  <h4>Turor name</h4>
+      <p>T.Arwa</p>
+      <p>T.Faisal</p>
+                  </details>
+              </li>  
+</ul>
+   
+</div>
+</main>
+<footer>
+   <p>Contact: codeKida@acadmay.com | Phone: 966-508-666-4332</p>
+  <p style="font-style: italic;">&copy; 2023 codeKids. All rights reserved.</p>
+
+</footer>
+
+<!-- JavaScript to toggle the menu -->
+<script>
+  function toggleMenu() {
+      var menu = document.querySelector('nav ul');
+      menu.classList.toggle('show');
+      
+  }
+  </script>
+</body>
+</html>

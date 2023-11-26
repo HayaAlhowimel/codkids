@@ -1,0 +1,82 @@
+   
+main h2 {
+    color: #3f91e3;
+    margin-bottom: 20px;
+}
+
+.dropdown-container {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 20px;
+}
+
+.dropdown-container label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.dropdown-container select {
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
+
+p.rating {
+    margin: 20px 0;
+    font-size: 30px;
+}
+
+textarea {
+    width: 100%;
+    /*max-width: 400px;*/
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.enroll-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #3f91e3;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.enroll-button:hover {
+    background-color: #2f7ac3;
+}
+
+/* Footer Style */
+footer {
+    background-color: #f2f2f2;
+    color: #000000;
+    text-align: center;
+    padding: 2vh;
+   position: relative;
+   width: auto;
+   
+} 
+.rating-container {
+    display: flex;
+     align-items: left;
+    margin-top: 10px;
+}
+
+.star {
+    cursor: pointer;
+    font-size: 40px;
+    color: #ddd; /* لون النجمة غير المحددة */
+}
+
+.star.checked {
+    color: #ffd700; /* لون النجمة المحددة */
+}

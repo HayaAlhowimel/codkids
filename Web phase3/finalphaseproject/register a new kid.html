@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register a New Kid</title> 
+<link rel="stylesheet" href="registerkids.css">
+<link rel="icon" type="image/png" href="codekidsLogo.png">
+<link rel="stylesheet" href="styles.css">
+<style>
+    body.theme1 {
+            background-color: #f2f2f2;
+            color: #000000;
+        }
+        body.theme2 {
+            background-color: #333333;
+            color: #ffffff;
+        }
+        footer {
+    background-color: #dddddd;
+    color: #000000;
+    text-align: center;
+    padding: 2vh;
+   position: relative;
+   width: auto;
+   clear: both;
+ }
+    </style>
+    
+    <script>
+        function toggleMenu() {
+            var menu = document.querySelector('nav ul');
+            menu.classList.toggle('show');
+        }
+        function applySavedTheme() {
+            const savedTheme = localStorage.getItem('selectedTheme');
+            if (savedTheme) {
+                document.body.classList.add(savedTheme);
+            }
+        }
+        window.addEventListener('DOMContentLoaded', function () {
+            applySavedTheme();
+        });
+
+        function validateForm() {
+    const nameInput = document.getElementById('name');
+    const photoInput = document.getElementById('photo');
+    const dobInput = document.getElementById('dob');
+    const phoneInput = document.getElementById('phone');
+    const emailInput = document.getElementById('email');
+    const selectedGender = document.querySelector('input[name="Gender"]:checked');
+    
+
+    const name = nameInput.value.trim();
+    const dob = dobInput.value.trim();
+    const phone = phoneInput.value.trim();
+    const email = emailInput.value.trim();
+    const genderValue = selectedGender ? selectedGender.value : null;
+
+   
+
+    if (/^\d/.test(name)) {
+        alert('Name cannot start with a number.');
+        return false;
+    }
+
+    if(!name){
+   alert('Please fill in the name field.') ;
+   return false;
+   }
+
+
+   if(!dob){
+   alert('Please fill in the date of birth field.') ;
+   return false;
+   }
+    const dobYear = new Date(dob).getFullYear();
+    if (dobYear > 2017) {
+        alert('Children younger than 6 years old are not accepted.');
+        return false;
+    }
+    if(!dob){
+   alert('Please fill in the date of birth field.') ;
+   return false;
+   }
+
+
+   if(!phone){
+   alert('Please fill in the phone number field.') ;
+   return false;
+   }
+    if (!/^\d{10}$/.test(phone)) {
+        alert('Phone number should be 10 digits.');
+        return false;
+    }
+    
+
+
+   if(!genderValue){
+   alert('Please select your gender.') ;
+   return false;
+   } 
+
+    const photoFile = photoInput.files[0];
+
+   if(!photoFile){
+   alert('Please select a profile photo.') ;
+   return false;
+   } 
+
+   if(!email){
+   alert('Please Fill in the email field.') ;
+   return false;
+   } 
+
+    
+
+    const childName = {
+        name: name,
+    };
+    const childNames = JSON.parse(localStorage.getItem('childNames')) || [];
+    childNames.push(childName.name);
+    localStorage.setItem('childNames', JSON.stringify(childNames));
+
+    PrintInformation(nameInput.value, dobInput.value, genderValue, phoneInput.value, emailInput.value, photoFile);
+
+    return true;
+}
+
+
+
+        function PrintInformation(name, dateOfBirth, gender, phone, email, photoFile) {
+  var printWindow = window.open('', 'PRINT', 'height=500,width=600');
+
+  if (photoFile) {
+      var reader = new FileReader();
+      reader.onload = function (e) {
+          printWindow.document.write(`
+              <html>
+              <head><title>Print Child Information</title></head>
+              <body>
+                  <div class="child-info">
+                      <img src="${e.target.result}" alt="Child Photo" style="width:100px;height:100px;">
+                      <h1>Child Information</h1>
+                      <p><strong>Child Name:</strong> ${name} </p>
+                      <p><strong>DOB:</strong> ${dateOfBirth}</p>
+                      <p><strong>Gender:</strong> ${gender}</p>
+                      <p><strong>Phone:</strong> ${phone}</p>
+                      <p><strong>Email:</strong> ${email}</p>
+                  </div>
+              </body>
+              </html>
+          `);
+          printWindow.document.close();
+          printWindow.focus();
+          printWindow.onload = function() {
+              printWindow.print();
+              printWindow.close();
+          };
+      };
+      reader.readAsDataURL(photoFile);
+  } else {
+      printWindow.document.write(`
+          <html>
+          <head><title>Print Child Information</title></head>
+          <body>
+              <div class="child-info">
+                  <h1>Child Information</h1>
+                  <p><strong>Child Name:</strong> ${name} </p>
+                  <p><strong>DOB:</strong> ${dateOfBirth}</p>
+                  <p><strong>Gender:</strong> ${gender}</p>
+                  <p><strong>Phone:</strong> ${phone}</p>
+                  <p><strong>Email:</strong> ${email}</p>
+              </div>
+          </body>
+          </html>
+      `);
+      printWindow.document.close();
+      printWindow.focus();
+      printWindow.print();
+      printWindow.close();
+  }
+}
+
+
+    </script>
+    
+</head>
+<body>
+<header>
+    <div class="logo">
+        <img src="image/download.png" alt="Platform Logo">
+        <h2 >Code kids</h2>
+    </div>
+  
+    <div>
+        <nav>
+            <ul>
+                <li><a href="home.html" accesskey="H">Home</a></li>
+                <li><a href="courses.html" accesskey="C">Courses</a></li>
+                <li><a href="tutors.html" accesskey="T">Tutors</a></li>
+                <li><a href="Admin.html" accesskey="A">Admin Dashboard</a></li>
+                <li><a href="parent%20dashboard.html" accesskey="P">Parent's Dashboard</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<ul class="breadcrumb">
+  <li><a href="home.html">home</a></li>
+  <li><a href="parent dashboard.html">Parent's Dashboard</a></li>
+  <li><a href="register a new kid.html">Register a New Kid</a></li>
+</ul>
+
+
+
+<h1 style="text-align: center;">Register a New Kid</h1>
+
+
+<form action="register a new kid.html" method="post" onsubmit="return validateForm()" enctype="multipart/form-data">
+
+    <!-- Personal Information -->
+    <h2>Personal Information</h2>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" >
+
+    <label for="photo">Photo:</label>
+    <input type="file" id="photo" name="photo" accept="img/*" >
+
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" name="dob" >
+
+
+    <p>Gender:</p>
+<ul style="list-style: none;">
+    <li><input type="radio" name="Gender" value="Male" > Male </li>
+    <li><input type="radio" name="Gender" value="female"> Female</li>
+</ul>
+
+   
+    
+    <!-- Contact Information -->
+    <h2>Contact Information</h2>
+    <label for="phone">Phone:</label>
+    <input type="tel" id="phone" name="phone" >
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" >
+
+    <input type="submit" value="Register">
+</form>
+<br>
+<footer>
+<p>Contact: codeKida@acadmay.com | Phone: 966-508-666-4332</p>
+<p style="font-style: italic;">&copy; 2023 codeKids. All rights reserved.</p>
+</footer>
+</body>
+
+</html>

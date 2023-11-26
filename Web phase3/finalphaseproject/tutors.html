@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code kids-Tutors</title>
+     <link rel="icon" type="image/png" href="codekidsLogo.png">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        main {
+            display: flex;
+            justify-content: space-between;
+            padding: 2vh 5vw;
+            height: auto;
+        }
+
+        body.theme1 {
+            background-color: #f2f2f2;
+            color: #000000;
+        }
+
+        body.theme2 {
+            background-color: #333333;
+            color: #ffffff;
+        }
+
+        .course-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .course {
+            width: 200px;
+            text-align: center;
+        }
+        footer {
+    background-color: #dddddd;
+    color: #000000;
+    text-align: center;
+    padding: 2vh;
+   position: relative;
+   width: auto;
+   clear: both;
+ }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <img src="image/download.png" alt="Platform Logo">
+        <h2>Code kids</h2>
+    </div>
+    <div class="menu-icon" onclick="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+    <div>
+        <nav>
+            <ul>
+                <li><a href="home.html" accesskey="H">Home</a></li>
+                <li><a href="courses.html" accesskey="C">Courses</a></li>
+                <li><a href="tutors.html" accesskey="T">Tutors</a></li>
+                <li><a href="Admin.html" accesskey="A">Admin Dashboard</a></li>
+                <li><a href="parent%20dashboard.html" accesskey="P">Parent's Dashboard</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<ul class="breadcrumb">
+    <li><a href="home.html">Home</a></li>
+    <li><a href="tutors.html">Tutor</a></li>
+</ul>
+
+<main>
+
+    <aside>
+        <label for="">Area of teaching</label>
+        <select>
+            <option value="all">select an option</option>
+            <option value="course1"> Java </option>
+            <option value="course2"> PHP </option>
+            <option value="course3"> Scratch </option>
+            <option value="course4"> Java Script </option>
+            <option value="course5"> C++ </option>
+            <option value="course6"> Python </option>
+        </select>
+        <label for="">Rating</label>
+        <select>
+            <option value="all">select an option</option>
+            <option value="rating1"> 1 </option>
+            <option value="rating2"> 2 </option>
+            <option value="rating3"> 3 </option>
+        </select>
+        <label for="">Availability</label>
+        <select>
+            <option value="all">select an option</option>
+            <option value="time1"> From 12:00 - 2:00PM</option>
+            <option value="time2"> From 9:00 - 11:00AM</option>
+        </select>
+        <button >Apply Filters</button>
+        <button >Clear Filters</button>
+    </aside>
+
+    <section class="tutors-courses">
+        <label for="sort">Sort Alphabetically:</label>
+        <select id="sort" onchange="sortTutors()">
+            <option value="asc">A-Z</option>
+            <option value="desc">Z-A</option>
+        </select>
+
+        <h2>Tutors</h2>
+
+        <div class="course-row" id="tutorsContainer">
+            <!-- Placeholder tutor elements, replace with your actual tutor elements -->
+            <div class="course">
+                <img src="image/sarah.jpg" alt="Course 1">
+                <h3>T.Sarah</h3>
+                <p>PHP Courses</p>
+            </div>
+            <div class="course">
+                <img src="image/arwa.jpg" alt="Course 1">
+                <h3>T.Arwa</h3>
+                <p>C++</p>
+            </div>
+            <div class="course">
+                <img src="image/nuha.WEBP" alt="Course 1">
+                <h3>T.Nuha</h3>
+                <p>Python Courses</p>
+            </div>
+            <div class="course">
+                <img src="image/Bader.jpg" alt="Course 1">
+                <h3>T.Bader</h3>
+                <p>Java Programming courses</p>
+            </div>
+            <div class="course">
+                <img src="image/mohammed.jpg" alt="Course 1">
+                <h3>T.Mohammed</h3>
+                <p>Java Script</p>
+            </div>
+            <div class="course">
+                <img src="image/faisal.jpg" alt="Course 1">
+                <h3>T.Faisal</h3>
+                <p>Scratch</p>
+            </div>
+        </div>
+
+    </section>
+
+</main>
+
+<footer>
+     <p>Contact: codeKida@acadmay.com | Phone: 966-508-666-4332</p>
+     <p style="font-style: italic;">&copy; 2023 codeKids. All rights reserved.</p>
+
+</footer>
+
+
+<script>
+    function toggleMenu() {
+        var menu = document.querySelector('nav ul');
+        menu.classList.toggle('show');
+    }
+
+    function sortTutors() {
+        var container = document.getElementById('tutorsContainer');
+        var sortOption = document.getElementById('sort').value;
+
+        var tutors = Array.from(container.children);
+
+        tutors.sort(function (a, b) {
+            var nameA = a.querySelector('h3').textContent.toUpperCase();
+            var nameB = b.querySelector('h3').textContent.toUpperCase();
+
+            if (sortOption === 'asc') {
+                return nameA.localeCompare(nameB);
+            } else {
+                return nameB.localeCompare(nameA);
+            }
+        });
+
+        tutors.forEach(function (tutor) {
+            container.appendChild(tutor);
+        });
+    }
+
+    function applySavedTheme() {
+        const savedTheme = localStorage.getItem('selectedTheme');
+        if (savedTheme) {
+            document.body.classList.add(savedTheme);
+        }
+    }
+    window.addEventListener('DOMContentLoaded', function () {
+        applySavedTheme();
+    });
+
+</script>
+
+</body>
+</html>

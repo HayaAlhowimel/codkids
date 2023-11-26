@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code kids-Course Enrollment</title>
+    <link rel="stylesheet" href="evalution.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="codekidsLogo.png">
+
+<style>
+    footer {
+    background-color: #dddddd;
+    color: #000000;
+    text-align: center;
+    padding: 2vh;
+   position: relative;
+   width: auto;
+   clear: both;
+ }
+    body.theme1 {
+            background-color: #f2f2f2;
+            color: #000000;
+        }
+        body.theme2 {
+            background-color: #333333;
+            color: #ffffff;
+        }
+    </style>
+    <script>
+        function applySavedTheme() {
+            const savedTheme = localStorage.getItem('selectedTheme');
+            if (savedTheme) {
+                document.body.classList.add(savedTheme);
+            }
+        }
+        window.addEventListener('DOMContentLoaded', function () {
+            applySavedTheme();
+        });
+
+        function submitEvaluation() {
+        const selectedCourseOption = document.getElementById('courses').options[document.getElementById('courses').selectedIndex];
+        const selectedCourse = selectedCourseOption.text;
+        const userRating = selectedRating;
+
+        if (!selectedCourse || userRating === 0) {
+            alert('Please select a course and rate it before submitting.');
+            return;
+        }
+
+        const starsString = generateStarsString(userRating);
+        alert(`Thank you for your feedback!\nYour rating for course ${selectedCourse} is ${starsString}`);
+    }
+
+    function generateStarsString(rating) {
+        const fullstar = '★';
+        const emptyStar = '☆';
+        return fullstar.repeat(rating) + emptyStar.repeat(5 - rating);
+    }
+
+        let selectedRating = 0;
+
+        function rate(rating) {
+            selectedRating = rating;
+
+             const stars = document.querySelectorAll('.star');
+            stars.forEach((star, index) => {
+                if (index < rating) {
+                    star.classList.add('checked');
+                } else {
+                    star.classList.remove('checked');
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="image/download.png" alt="Platform Logo">
+            <h2>Code kids</h2>
+        </div>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <div>
+            <nav>
+                <ul>
+                    <li><a href="home.html" accesskey="H">Home</a></li>
+                    <li><a href="courses.html" accesskey="C">Courses</a></li>
+                    <li><a href="tutors.html" accesskey="T">Tutors</a></li>
+                    <li><a href="Admin.html" accesskey="A">Admin Dashboard</a></li>
+                    <li><a href="parent%20dashboard.html" accesskey="P">Parent's Dashboard</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <ul class="breadcrumb">
+        <li><a href="home.html">Home</a></li>
+        <li> <a href="parent dashboard.html">Parent dashboard</a></li>
+        <li><a href="course_evalution.html">Course evalution</a></li>
+        </ul>
+<br><br>
+<main>
+    <h2>Course Evaluation</h2>    
+    <div class="dropdown-container">
+        <label for="courses">Select Course:</label>
+        <select id="courses" name="course" required>
+            <option value="" disabled selected>Select Course</option>
+            <option value="course1">Python</option>
+            <option value="course2">Html</option>
+            <option value="course3">JavaScript</option>
+            <option value="course4">Scratch</option>
+            <option value="course5">CSS</option>
+            <option value="course6">C++</option>
+        </select>
+    </div>
+    
+ <br>
+        <label for="rating">Rate and review:</label>
+     <div class="rating-container">
+        <span class="star" onclick="rate(1)">★</span>
+        <span class="star" onclick="rate(2)">★</span>
+        <span class="star" onclick="rate(3)">★</span>
+        <span class="star" onclick="rate(4)">★</span>
+        <span class="star" onclick="rate(5)">★</span>
+    </div>
+
+</div>
+        <br>
+<br>
+<textarea name="review" rows="4" placeholder="Enter your feedback here"></textarea>
+<br>
+<br>
+<br>
+<!--<p>Here add image!</p>-->
+<br><br>
+<button class="enroll-button" onclick="submitEvaluation()">Send</button>
+    </main>
+     <footer>
+         <p>Contact: codeKida@acadmay.com | Phone: 966-508-666-4332</p>
+         <p style="font-style: italic;">&copy; 2023 codeKids. All rights reserved.</p>
+
+    </footer>
+    <script>
+        function toggleMenu() {
+            var menu = document.querySelector('nav ul');
+            menu.classList.toggle('show');
+        }
+    </script>
+    
+</body>
+
+</html>

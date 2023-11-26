@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code kids-Schedua </title>
+    <link rel="icon" type="image/png" href="codekidsLogo.png">
+
+    <link rel="stylesheet" href="sch.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body.theme1 {
+                background-color: #f2f2f2;
+                color: #000000;
+            }
+            body.theme2 {
+                background-color: #333333;
+                color: #ffffff;
+            }
+            footer {
+    background-color: #dddddd;
+    color: #000000;
+    text-align: center;
+    padding: 2vh;
+   position: relative;
+   width: auto;
+   clear: both;
+ }
+        </style>
+        
+        <script>
+            function toggleMenu() {
+                var menu = document.querySelector('nav ul');
+                menu.classList.toggle('show');
+            }
+            function applySavedTheme() {
+                const savedTheme = localStorage.getItem('selectedTheme');
+                if (savedTheme) {
+                    document.body.classList.add(savedTheme);
+                }
+            }
+            window.addEventListener('DOMContentLoaded', function () {
+                applySavedTheme();
+            });
+        </script>
+        
+</head>
+<body>
+    
+    <header>
+        
+        <div class="logo">
+            <img src="image/download.png" alt="Platform Logo">
+            <h2>Code kids</h2>
+        </div>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html" accesskey="H">Home</a></li>
+                        <li><a href="courses.html" accesskey="C">Courses</a></li>
+                        <li><a href="tutors.html" accesskey="T">Tutors</a></li>
+                        <li><a href="Admin.html" accesskey="A">Admin Dashboard</a></li>
+                        <li><a href="parent%20dashboard.html" accesskey="P">Parent's Dashboard</a></li>
+            </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <ul class="breadcrumb">
+        <li><a href="home.html">Home</a></li>
+        <li> <a href="Admin.html">Adminstrutor dashboard </a></li>
+        <li><a href="Schedule.html">Schedule</a></li>
+        </ul>
+    <br>
+<main>  
+    <div class="table-container">
+        <table>
+            <caption>T.Sarah  </caption>
+                 <thead> 
+                    <tr> 
+                  <th> </th>
+                <th>Sunday</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday </th>
+                <th>Thursday</th>
+                <th>Friday</th>
+                <th>Saturday</th>
+                    </tr>
+            </thead>  
+                     
+            <tbody>
+             <tr>
+                 <td class="time">3:00-4:00</td>
+                <td rowspan='3'> JavaScript</td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td class="dayOff"> </td>
+                <td class="dayOff"></td>
+            </tr>
+            <tr>
+                 <td class="time">4:00-5:00</td> 
+                <td> </td>
+                <td colspan='2' rowspan='2'> PHP </td> 
+                <td></td>
+                <td class="dayOff"> </td>
+                <td class="dayOff"></td>
+            </tr>
+            <tr>
+                 <td class="time">5:00-6:00</td> 
+                <td> </td>  
+                <td> PHP</td>
+                <td class="dayOff"> </td>
+                <td class="dayOff"></td>
+            </tr>
+            <tr>
+                 <td class="time">6:00-7:00</td>
+                <td  colspan='5'>JavaScript</td> 
+                <td class="dayOff"> </td>
+                <td class="dayOff"></td>
+            </tr>
+            <tr>    
+                 <td class="time">7:00-8:00</td>
+                <td> </td>
+                <td></td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td class="dayOff"> </td>
+                <td class="dayOff"></td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+    </main>
+    <footer>
+         <p>Contact: codeKida@acadmay.com | Phone: 966-508-666-4332</p>
+         <p style="font-style: italic;">&copy; 2023 codeKids. All rights reserved.</p>
+
+    </footer>
+    
+    <!-- JavaScript to toggle the menu -->
+    <script>
+        function toggleMenu() {
+            var menu = document.querySelector('nav ul');
+            menu.classList.toggle('show');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code kids-Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="codekidsLogo.png">
+
+    <style>
+        footer {
+    background-color: #dddddd;
+    color: #000000;
+    text-align: center;
+    padding: 2vh;
+   position: relative;
+   width: auto;
+   clear: both;
+ }
+
+body.theme1 {
+            background-color: #f2f2f2;
+            color: #000000;
+        }
+        body.theme2 {
+            background-color: #333333;
+            color: #ffffff;
+        }
+
+    .theme{
+        background-color:rgb(87, 87, 187);
+        color:white;
+        margin-left:20px;
+        font-weight:bold;
+    }    
+  </style>
+
+
+<script>
+   function toggleTheme() {
+        const body = document.body;
+        body.classList.toggle('theme1');
+        body.classList.toggle('theme2');
+        const currentTheme = body.classList.contains('theme1') ? 'theme1' : 'theme2';
+        localStorage.setItem('selectedTheme', currentTheme);
+    }
+
+    function applySavedTheme() {
+        const savedTheme = localStorage.getItem('selectedTheme');
+        if (savedTheme) {
+            document.body.classList.add(savedTheme);
+        }
+    }
+    window.addEventListener('DOMContentLoaded', function () {
+        applySavedTheme();
+        if (window.location.pathname.includes('home.html')) {
+            applySavedTheme();
+        }
+    });
+</script>
+
+</head>
+<body>
+    
+<header>
+    <div class="logo">
+        <img src="image/download.png" alt="Platform Logo">
+        <h2 >Code kids</h2> 
+     
+        <button class="theme" onclick="toggleTheme()">Switch Theme</button>
+    </div>
+    <div class="menu-icon" onclick="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="home.html" accesskey="H">Home</a></li>
+                <li><a href="courses.html" accesskey="C">Courses</a></li>
+                <li><a href="tutors.html" accesskey="T">Tutors</a></li>
+                <li><a href="Admin.html" accesskey="A">Admin Dashboard</a></li>
+                <li><a href="parent dashboard.html" accesskey="P">Parent's Dashboard</a></li>
+                </div>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <article class="centered-section">
+        <figure>
+            <img src="image/download.png" alt="Your Image">
+            <figcaption>
+                <h2>Our vision</h2>
+                <p>   At CodeKids, we beleive that  every child should have the 
+                    opportunity to learn programming. <br>
+                     Our mission is to provide a fun and engaging platform for kids to learn 
+                      coding <br> skills that will prepare them for the future
+                </p>
+            </figcaption>
+        </figure>
+    </article>
+   
+    <section class="pro-courses">
+        <h2>Programming Courses</h2>
+    
+        <div class="course-rows">
+            <div class="courses">
+                <img src="image/pyhton.png" alt="Course 1">
+                <h3>Python</h3>
+                <p>Rate: ★★★★☆</p>
+                <p>Learn Python with our comprehensive programming course. Gain a solid foundation in Python syntax, data types, control flow, and more. Develop practical coding skills through hands-on exercises and projects. Ideal for beginners and those with minimal programming experience. Start your journey into the world of Python programming today!</p>
+                <a href="courses.html" class="course-button">Read more</a>
+            </div>
+            <div class="courses">
+                <img src="image/scratch.jpg" alt="Course 1">
+                <h3>Scratch</h3>
+                <p>Rate: ★★★★☆</p>
+                <p>Unlock your creativity and learn coding with Scratch! Our interactive programming course teaches you the fundamentals of Scratch, a beginner-friendly visual programming language. Dive into the world of coding as you create fun and interactive projects, animations, and games.</p>
+                <a href="courses.html" class="course-button">Read more</a>
+            </div>
+            <div class="courses">
+                <img src="image/java.png" alt="Course 1">
+                <h3>Java</h3>
+                <p>Rate: ★★★★☆</p>
+                <p>Introduce your child to the exciting world of Java programming with our kid-friendly course. Designed specifically for young learners, this interactive program engages kids in fun coding adventures. Through hands-on activities and projects, they will develop essential Java skills while creating games, animations, and more. Join us for an exciting coding journey today! </p>
+                <a href="courses.html" class="course-button">Read more</a>
+            </div>
+            <div class="courses">
+                <img src="image/c.jpg" alt="Course 1">
+                <h3>C++</h3>
+                <p>Rate: ★★★★☆</p>
+                <p>Let your child explore the world of C++ programming through our engaging and interactive course. Designed for young learners, this program introduces kids to the fundamentals of C++ in a fun and creative way. Enroll today and embark on an exciting coding adventure!</p>
+                <a href="courses.html" class="course-button">Read more</a>
+            </div>
+            <div class="courses">
+                <img src="image/js.jpg" alt="Course 1">
+                <h3>Java Script</h3>
+                <p>Rate: ★★★★☆</p>
+                <p>Introduce your child to the dynamic world of JavaScript programming with our exciting course designed just for kids. Through hands-on projects and interactive activities, children will learn the basics of JavaScript while unleashing their creativity and building their own web-based games, interactive stories, and animations. With a focus on fun and exploration.</p>
+                <a href="courses.html" class="course-button">Read more</a>
+            </div>
+            <div class="courses">
+                <img src="image/php.jpg" alt="Course 1">
+                <h3>PHP</h3>
+                <p>Rate: ★★★★☆</p>
+                <p>Calling all young adventurers! Join our PHP Programming for Kids course and embark on a journey to create dynamic and interactive websites. Designed specifically for children, this course introduces the fundamentals of PHP programming through exciting hands-on projects. Kids will learn to build web pages, create forms, and add functionality to their websites using PHP.</p>
+                <a href="courses.html" class="course-button">Read more</a>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="user-detail">
+        <h2 >Reviews</h2>
+        <div class="user-container">
+            <div class="user">
+                <div class="user-details">
+                    <img src="image/profile.jpg" alt="User 1">
+                    <div class="details">
+                        <h3>Mohammed</h3>
+                        <p>Rating: ★★★★☆</p>
+                        <p>VERY GOOOD!</p>
+                    </div>
+                </div>
+                <img class="large-image" src="image/aa.jpg" alt="Large User Image 1">
+            </div>
+            <div class="user">
+                <div class="user-details">
+                    <img src="image/profile.jpg" alt="User 1">
+                    <div class="details">
+                        <h3>Ali</h3>
+                        <p>Rating: ★★★★☆</p>
+                        <p>I like it!</p>
+                    </div>
+                </div>
+                <img class="large-image" src="image/d.jpg" alt="Large User Image 1">
+            </div>
+            <div class="user">
+                <div class="user-details">
+                    <img src="image/profile.jpg" alt="User 1">
+                    <div class="details">
+                        <h3>Fahad</h3>
+                        <p>Rating: ★★★★☆</p>
+                        <p>amazing</p>
+                    </div>
+                </div>
+                <img class="large-image" src="image/a.JPG" alt="Large User Image 1">
+            </div>
+            <div class="user">
+                <div class="user-details">
+                    <img src="image/profile.jpg" alt="User 1">
+                    <div class="details">
+                        <h3>Nasser</h3>
+                        <p>Rating: ★★★★☆</p>
+                        <p>professional</p>
+                    </div>
+                </div>
+                <img class="large-image" src="image/b.WEBP" alt="Large User Image 1">
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <footer>
+        <p>Contact: codeKida@acadmay.com | Phone: 966-508-666-4332</p>
+        <p style="font-style: italic;">&copy; 2023 codeKids. All rights reserved.</p>
+   
+   </footer>
+   
+</footer>
+
+<!-- JavaScript to toggle the menu -->
+<script>
+    function toggleMenu() {
+        var menu = document.querySelector('nav ul');
+        menu.classList.toggle('show');
+    }
+</script>
+
+
+</body>
+</html>

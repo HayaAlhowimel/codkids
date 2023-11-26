@@ -1,0 +1,58 @@
+ 
+.table-container {
+    margin: 0 auto;
+    width: 90%;
+}
+ 
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 0;
+ }
+ thead th {
+    color: rgb(255, 255, 255);
+    background-color: #394c8b;
+    font-weight: bold;
+    border: 1px solid #000000;
+    padding: 33px;
+    text-align: center;
+ }
+
+tbody td {
+    border: 1px solid #000000;
+    padding: 33px;
+    text-align: center;
+    color: rgb(0, 0, 0);
+
+}
+ 
+ 
+
+
+
+    
+             
+            
+
+.time{
+    background-color: #293d7e;
+font-weight: bold;
+color: aliceblue;
+
+ }
+ caption {
+    font-size: 1.5em;
+    text-align: center;
+    padding: 10px;
+    background-color: #293d7e;
+    color: white;
+}
+
+
+
+
+
+.dayOff{
+    background-color: rgb(190, 187, 187);
+}
+ 

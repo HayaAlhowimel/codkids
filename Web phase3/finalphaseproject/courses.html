@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code kids-Course</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="codekidsLogo.png">
+
+</head>
+
+<style>
+    footer {
+    background-color: #dddddd;
+    color: #000000;
+    text-align: center;
+    padding: 2vh;
+   position: relative;
+   width: auto;
+   clear: both;
+ }
+
+body.theme1 {
+        background-color: #f2f2f2;
+        color: #000000;
+    }
+
+    body.theme2 {
+        background-color: #333333;
+        color: #ffffff;
+    }
+</style>
+
+<script>
+    function toggleMenu() {
+        var menu = document.querySelector('nav ul');
+        menu.classList.toggle('show');
+    }
+    function applySavedTheme() {
+        const savedTheme = localStorage.getItem('selectedTheme');
+        if (savedTheme) {
+            document.body.classList.add(savedTheme);
+        }
+    }
+    window.addEventListener('DOMContentLoaded', function () {
+        applySavedTheme();
+    });
+</script>
+
+
+<body >
+    
+<header>
+    <div class="logo">
+        <img src="image/download.png" alt="Platform Logo">
+        <h2>Code kids</h2>
+    </div>
+    <div class="menu-icon" onclick="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+    <div>
+        <nav>
+            <ul>
+                <li><a href="home.html" accesskey="H">Home</a></li>
+                <li><a href="courses.html" accesskey="C">Courses</a></li>
+                <li><a href="tutors.html" accesskey="T">Tutors</a></li>
+                <li><a href="Admin.html" accesskey="A">Admin Dashboard</a></li>
+                <li><a href="parent%20dashboard.html" accesskey="P">Parent's Dashboard</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<ul class="breadcrumb">
+    <li><a href="home.html">Home</a></li>
+    <li> <a href="courses.html">Course</a></li>
+    </ul>
+    
+
+<main>
+     
+   
+   
+    <section class="programming-courses">
+        <h2>Programming Courses</h2>    
+            <div class="card-container" id="card-container">
+                <div class="card">
+                    <div class="card-all">
+                        <img src="image/pyhton.png" alt="Card Image">
+                        <div class="card-content">
+                            <h2 class="card-title">Python</h2>
+                            <p class="card-description">Description 2</p>
+                            <p class="card-detail">sunday-monday(2-4pm)</p>
+                            <p class="card-detail">T.Nuha</p>
+                            <p class="card-detail">intermediate</p>
+
+                            <div class="card-buttons">
+                                <button>view details</button>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+                <div class="card">
+                    <div class="card-all">
+                        <img src="image/c.jpg" alt="Card Image">
+                        <div class="card-content">
+                            <h2 class="card-title">C++</h2>
+                            <p class="card-description">Description 2</p>
+                            <p class="card-detail">sunday-monday(2-4pm)</p>
+                            <p class="card-detail">T.Arwa</p>
+                            <p class="card-detail">intermediate</p>
+
+                            <div class="card-buttons">
+                                <button>view details</button>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+                <div class="card">
+                    <div class="card-all">
+                        <img src="image/js.jpg" alt="Card Image">
+                        <div class="card-content">
+                            <h2 class="card-title">Java Script</h2>
+                            <p class="card-description">Description 2</p>
+                            <p class="card-detail">sunday-monday(2-4pm)</p>
+                            <p class="card-detail">T.Saleh</p>
+                            <p class="card-detail">Advanced</p>
+
+                            <div class="card-buttons">
+                                <button>view details</button>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+                <div class="card">
+                    <div class="card-all">
+                        <img src="image/scratch.jpg" alt="Card Image">
+                        <div class="card-content">
+                            <h2 class="card-title">Scratch</h2>
+                            <p class="card-description">Description 2</p>
+                            <p class="card-detail">sunday-monday(2-4pm)</p>
+                            <p class="card-detail">T.Faisal</p>
+                            <p class="card-detail">intermediate</p>
+
+                            <div class="card-buttons">
+                                <button>view details</button>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+                <div class="card">
+                    <div class="card-all">
+                        <img src="image/php.jpg" alt="Card Image">
+                        <div class="card-content">
+                            <h2 class="card-title">PHP</h2>
+                            <p class="card-description">Description 2</p>
+                            <p class="card-detail">sunday-monday(2-4pm)</p>
+                            <p class="card-detail">T.Sarah</p>
+                            <p class="card-detail">intermediate</p>
+
+                            <div class="card-buttons">
+                                <button>view details</button>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+                <div class="card">
+                    <div class="card-all">
+                        <img src="image/java.png" alt="Card Image">
+                        <div class="card-content">
+                            <h2 class="card-title">Java</h2>
+                            <p class="card-description">Description 2</p>
+                            <p class="card-detail">sunday-monday(2-4pm)</p>
+                            <p class="card-detail">T,Bader</p>
+                            <p class="card-detail">High</p>
+
+                            <div class="card-buttons">
+                                <button>view details</button>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+
+                
+            </div>
+        
+    </section>
+
+  
+</main>
+
+<footer>
+     <p>Contact: codeKida@acadmay.com | Phone: 966-508-666-4332</p>
+
+     <p style="font-style: italic;">&copy; 2023 codeKids. All rights reserved.</p>
+
+</footer>
+
+<!-- JavaScript to toggle the menu -->
+<script>
+    function toggleMenu() {
+        var menu = document.querySelector('nav ul');
+        menu.classList.toggle('show');
+    }
+</script>
+
+
+</body>
+</html>
